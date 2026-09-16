@@ -27,4 +27,4 @@
 4. 填写好 MCP 服务器的地址和端口，点击启动
 5. 将 mcp-skill 添加到你的 Agent 中，Agent 即可掌握技能使用
 
-如需详细了解，可参考 [Android MCP APK 完整教程](https://github.com/yourusername/android-mcp/wiki/Android-MCP-APK-Complete-Tutorial)
+如需详细了解，可参考 [Android MCP APK 完整教程](README LLM.md)
