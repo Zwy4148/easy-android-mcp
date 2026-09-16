@@ -1,5 +1,5 @@
-# Android MCP APK 简易教程
-
+# easy-android-mcp 
+一个MCP服务器APK
 将 Android 设备变为 MCP 服务器，提供连接给 AI Agent 操控，实现多场景自动化的 APK。工具支持宏定义，方便用户自定义操作和 AI 保存常用操作。
 
 ## 功能特性
