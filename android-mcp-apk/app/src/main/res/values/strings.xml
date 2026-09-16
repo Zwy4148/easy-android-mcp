@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android MCP</string>
+    <string name="accessibility_service_label">Android MCP 自动化服务</string>
+    <string name="accessibility_service_desc">读取当前界面控件树、模拟点击与滑动、输入文本、截图，用于通过 MCP 协议执行手机自动化任务。</string>
+
+    <string name="title_permission">权限准备（必须）</string>
+    <string name="title_server">MCP 服务设置</string>
+    <string name="title_status">运行状态</string>
+    <string name="title_adb">ADB 兼容通道（可选）</string>
+
+    <string name="btn_open_accessibility">① 开启无障碍权限</string>
+    <string name="btn_open_wireless_adb">② 打开无线调试设置</string>
+    <string name="btn_test_adb">测试 ADB 连接</string>
+    <string name="btn_start">启动 MCP 服务</string>
+    <string name="btn_stop">停止 MCP 服务</string>
+
+    <string name="hint_port">监听端口（如 8080）</string>
+    <string name="hint_token">Bearer 鉴权 Token</string>
+    <string name="hint_adb_target">ADB 地址（无线调试的 IP:端口）</string>
+
+    <string name="tip_accessibility">请在系统列表中找到「Android MCP 自动化服务」并开启。这是主要控制通道，无需 root、无需 adbd。</string>
+    <string name="tip_wireless_adb">可选：进入「开发者选项 → 无线调试」查看 IP 与端口，填入下方后可作为备选控制通道。</string>
+    <string name="tip_restart">修改端口或 Token 后，请停止再重新启动服务生效。</string>
+</resources>

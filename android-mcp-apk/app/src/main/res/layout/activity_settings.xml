@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 顶部栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btn_settings_back"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← 返回"
+                android:textColor="@color/brand"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="设置"
+                android:textColor="@color/text_main"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="1dp" />
+        </LinearLayout>
+
+        <!-- frpc 内网穿透卡片（已隐藏入口，保留底层能力） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="frpc 内网穿透"
+                android:textColor="@color/text_main"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_frp_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="frpc：未启动"
+                android:textColor="@color/text_sub"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_frp_server_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="frps 服务端地址（如 1.2.3.4）"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_frp_server_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="frps 端口（默认 7000）"
+                android:inputType="number"
+                android:maxLength="5" />
+
+            <EditText
+                android:id="@+id/et_frp_token"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="auth.token（可选）"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_frp_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="user（可选，用于区分用户）"
+                android:inputType="text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/divider" />
+
+            <EditText
+                android:id="@+id/et_frp_proxy_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="代理名称（如 mcp-tcp）"
+                android:inputType="text" />
+
+            <Spinner
+                android:id="@+id/sp_frp_proxy_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/et_frp_local_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="本地 IP（默认 127.0.0.1）"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/et_frp_local_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="本地端口（如 8080）"
+                android:inputType="number"
+                android:maxLength="5" />
+
+            <EditText
+                android:id="@+id/et_frp_remote_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="远端端口（tcp 类型必填，0 表示不填）"
+                android:inputType="number"
+                android:maxLength="5" />
+
+            <EditText
+                android:id="@+id/et_frp_custom_domains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="自定义域名（http/https，逗号分隔）"
+                android:inputType="text" />
+
+            <CheckBox
+                android:id="@+id/cb_frp_raw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="使用自定义完整配置（覆盖上方表单）" />
+
+            <Button
+                android:id="@+id/btn_frp_edit_raw"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="编辑完整 frpc.toml"
+                android:textColor="@color/brand" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_frp_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="启动 frpc" />
+
+                <Button
+                    android:id="@+id/btn_frp_stop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="停止 frpc" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 宏管理卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="宏管理"
+                    android:textColor="@color/text_main"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_refresh_macros"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="刷新"
+                    android:textColor="@color/brand"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="已保存的宏（可通过 MCP save_macro 新增）"
+                android:textColor="@color/text_sub"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_macro_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <!-- 查看日志入口 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日志"
+                android:textColor="@color/text_main"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="按日期查看 MCP 运行日志"
+                android:textColor="@color/text_sub"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_view_logs"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="查看运行日志"
+                android:textColor="@color/brand" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

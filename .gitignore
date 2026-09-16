@@ -1,0 +1,25 @@
+# ===== Android / Gradle =====
+.gradle/
+.idea/
+build/
+**/build/
+local.properties
+*.iml
+.cxx/
+externalNativeBuild/
+captures/
+.externalNativeBuild/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editor / IDE =====
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===== Logs =====
+*.log

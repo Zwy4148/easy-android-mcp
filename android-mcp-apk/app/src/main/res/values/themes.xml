@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 不依赖 AppCompat/Material 库，使用系统内置 Material 主题 -->
+    <style name="Theme.AndroidMcp" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/brand</item>
+        <item name="android:colorPrimaryDark">@color/brand_dark</item>
+        <item name="android:colorAccent">@color/brand</item>
+        <item name="android:windowBackground">@color/page_bg</item>
+        <item name="android:statusBarColor">@color/brand_dark</item>
+    </style>
+</resources>
